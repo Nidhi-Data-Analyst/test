@@ -50,6 +50,7 @@ function generateSignature() {
                     <span style="font-weight: ${bolds.Chennai};">Chennai</span>
                 </div>
             </div>
+            <div class="vertical-line"></div>
             <div class="signature-details">
                 <div class="name-linkedin">
                     <span class="name">${name}</span>
