@@ -12,7 +12,8 @@
             border: 1px solid #e0e0e0;
             padding: 10px;
             border-radius: 5px;
-            width: 100%; max-width: 600px;
+            width: 100%;
+            max-width: 600px;
         }
         .profile-pic {
             border-radius: 50%;
@@ -64,52 +65,32 @@
     </style>
 </head>
 <body>
-    <div class="signature-container">
-        <table>
-            <tr>
-                <td style="vertical-align: top; padding-right: 10px;">
-                    <img src="profile-pic-url" alt="Profile Picture" class="profile-pic">
-                    <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/school-logo.png?raw=true" alt="School Logo" class="school-logo">
-                    <div class="school-locations">
-                        <span style="font-weight: bold;">Noida</span> |
-                        <span>Gurgaon</span> |
-                        <span>Faridabad</span> |
-                        <span>Delhi</span> |
-                        <span>Chennai</span>
-                    </div>
-                </td>
-                <td style="border-left: 1.5px solid #a6a6a6; padding-left: 10px;">
-                    <div class="name-linkedin">
-                        <span>Nidhi Gupta</span>
-                        <a href="linkedin-url" target="_blank">
-                            <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/linkedin-icon.png?raw=true" alt="LinkedIn" style="width: 15px; height: 15px; margin-left: 5px;">
-                        </a>
-                    </div>
-                    <div class="designation">Data Analyst</div>
-                    <div class="contact-info">
-                        <div>
-                            <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/phone-icon.png?raw=true" alt="Phone Icon"> 
-                            <a href="tel:8742963761">8742963761</a>
-                        </div>
-                        <div>
-                            <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/email-icon.png?raw=true" alt="Email Icon"> 
-                            <a href="mailto:nidhi.gupta@sns.edu.in">nidhi.gupta@sns.edu.in</a>
-                        </div>
-                        <div>
-                            <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/website-icon.png?raw=true" alt="Web Icon"> 
-                            <a href="https://shivnadarschool.edu.in/">https://shivnadarschool.edu.in/</a>
-                        </div>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/shivnadarschool"><img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/facebook-icon.png?raw=true" alt="Facebook"></a>
-                        <a href="https://www.instagram.com/shivnadarschool"><img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/instagram-icon.png?raw=true" alt="Instagram"></a>
-                        <a href="https://www.youtube.com/@shivnadarschools"><img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/youtube-icon.png?raw=true" alt="YouTube"></a>
-                        <a href="https://www.linkedin.com/school/shiv-nadar-school/"><img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/linkedin-icon.png?raw=true" alt="LinkedIn"></a>
-                        <a href="https://www.twitter.com/shivnadarschool"><img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/twitter-icon.png?raw=true" alt="Twitter"></a>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <h1>Email Signature Generator</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Name"><br>
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" placeholder="Designation"><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" placeholder="Phone"><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Email"><br>
+    <label for="linkedin">LinkedIn URL:</label>
+    <input type="url" id="linkedin" placeholder="LinkedIn URL"><br>
+    <label for="profilePic">Upload Profile Pic:</label>
+    <input type="file" id="profilePic" accept="image/*"><br>
+    <label for="campus">Campus:</label>
+    <select id="campus">
+        <option value="Core Office">Core Office</option>
+        <option value="Noida">Noida</option>
+        <option value="Gurgaon">Gurgaon</option>
+        <option value="Faridabad">Faridabad</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Chennai">Chennai</option>
+    </select><br>
+    <button onclick="generateSignature()">Generate Signature</button>
+    <div id="signature-result"></div>
+    <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button class="copy-button" onclick="copyToSignatureRescue()">Copy HTML to Signature Rescue</button>
+    <script src="script.js"></script>
 </body>
 </html>
