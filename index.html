@@ -4,75 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Signature Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        .container input,
-        .container select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .container button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
-        .container button:hover {
-            background-color: #0056b3;
-        }
-        .signature-preview {
-            margin-top: 20px;
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Email Signature Generator</h1>
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="designation" placeholder="Designation">
-        <input type="text" id="phone" placeholder="Phone">
-        <input type="email" id="email" placeholder="Email">
-        <input type="text" id="linkedin" placeholder="LinkedIn URL">
-        <input type="file" id="profilePic" accept="image/*">
-        <select id="campus">
-            <option value="Noida">Noida</option>
-            <option value="Gurgaon">Gurgaon</option>
-            <option value="Faridabad">Faridabad</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Chennai">Chennai</option>
-            <option value="Core Office">Core Office</option>
-        </select>
-        <button onclick="generateSignature()">Generate Signature</button>
-        <div class="signature-preview" id="signature-preview"></div>
-        <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        <button onclick="copyToSignatureRescue()">Copy HTML to Signature Rescue</button>
-    </div>
-
-    <script src="script.js"></script>
+    <h1>Email Signature Generator</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Name"><br>
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" placeholder="Designation"><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" placeholder="Phone"><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Email"><br>
+    <label for="linkedin">LinkedIn URL:</label>
+    <input type="url" id="linkedin" placeholder="LinkedIn URL"><br>
+    <label for="profilePic">Upload Profile Pic:</label>
+    <input type="file" id="profilePic" accept="image/*"><br>
+    <label for="campus">Campus:</label>
+    <select id="campus">
+        <option value="Core Office">Core Office</option>
+        <option value="Noida">Noida</option>
+        <option value="Gurgaon">Gurgaon</option>
+        <option value="Faridabad">Faridabad</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Chennai">Chennai</option>
+    </select><br>
+    <button onclick="generateSignature()">Generate Signature</button>
+    <div id="signature-result"></div>
+    <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button class="copy-button" onclick="copyToSignatureRescue()">Copy HTML to Signature Rescue</button>
+    <script src="scriptes.js"></script>
 </body>
 </html>
