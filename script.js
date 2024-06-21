@@ -40,7 +40,7 @@ function generateSignature() {
         const signatureHtml = `
         <div class="signature-container" style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; display: Block; align-items: flex-start; border: 1px solid #e0e0e0; padding: 2px; border-radius: 5px; margin-left: 5px; 
             width: 100px;">
-            <div class="left-column" style="display: block; flex-direction: column; align-items: center; margin-right: 5px;">
+            <div class="left-column" style="display: block; align-items: center; margin-right: 0px;">
                 <img src="${profilePicUrl}" alt="Profile Picture" class="profile-pic" style="border-radius: 50%; width: 70px;">
                 <img src="${githubBaseUrl}school-logo.png?raw=true" alt="School Logo" class="school-logo" style="width: 60px; margin-top: 10px;">
                 <div class="school-locations" style="font-size: 5px; color: #0d56a2; text-align: center; margin-top: 3px;">
