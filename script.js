@@ -1,59 +1,46 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('generate-signature-btn').onclick = generateSignature;
+    document.getElementById('copy-to-clipboard-btn').onclick = copyToClipboard;
+    document.getElementById('copy-to-signature-rescue-btn').onclick = copyToSignatureRescue;
+});
+
 function generateSignature() {
     const name = document.getElementById('name').value;
     const designation = document.getElementById('designation').value;
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
-    const linkedin = document.getElementById('linkedin').value;
-    const profilePic = document.getElementById('profilePic').files[0];
+    const linkedinUrl = document.getElementById('linkedin').value;
     const campus = document.getElementById('campus').value;
+    const profilePicInput = document.getElementById('profile-pic');
+    const profilePicUrl = URL.createObjectURL(profilePicInput.files[0]);
 
-    if (!name || !designation || !phone || !email || !profilePic || !campus) {
-        alert('Please fill in all mandatory fields.');
-        return;
+    let linkedinHtml = '';
+    if (linkedinUrl) {
+        linkedinHtml = `<div class="vertical-line-small"></div>
+            <a href="${linkedinUrl}" target="_blank">
+                <img src="https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/linkedin-icon.png?raw=true" alt="LinkedIn" class="linkedin-logo" style="width: 15px; height: 15px;">
+            </a>`;
     }
 
-    const reader = new FileReader();
-    reader.readAsDataURL(profilePic);
-    reader.onloadend = function () {
-        const profilePicUrl = reader.result;
-        const githubBaseUrl = 'https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/';
+    const githubBaseUrl = "https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/";
 
-        const bolds = {
-            "Noida": "normal",
-            "Gurgaon": "normal",
-            "Faridabad": "normal",
-            "Delhi": "normal",
-            "Chennai": "normal",
-        };
-        bolds[campus] = "bold";
-
-        let linkedinHtml = '';
-        if (linkedin) {
-            linkedinHtml = `
-            <div style="height: 15px; width: 1.5px; background-color: #999; margin: 0 2px;"></div>
-            <a href="${linkedin}" target="_blank">
-                <img src="${githubBaseUrl}linkedin-icon.png?raw=true" alt="LinkedIn" style="width: 15px; height: 15px;">
-            </a>
-            `;
-        }
-
-        const signatureHtml = `
-        <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; padding: 2px; border-radius: 5px; width: 100%; max-width: 400px; font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6;">
-            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-right: 10px;">
+    const signatureHtml = `
+        <div style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; display: flex; align-items: flex-start; border: 1px solid #e0e0e0; padding: 2px; border-radius: 5px; margin-left: 5px; width: 100%; max-width: 300px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
                 <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; width: 70px;">
-                <img src="${githubBaseUrl}school-logo.png?raw=true" alt="School Logo" style="width: 60px; margin-top: 10px;">
-                <div style="font-size: 5px; color: #0d56a2; margin-top: 3px;">
-                    <span style="font-weight: ${bolds.Noida};">Noida</span> | 
-                    <span style="font-weight: ${bolds.Gurgaon};">Gurgaon</span> | 
-                    <span style="font-weight: ${bolds.Faridabad};">Faridabad</span> | 
-                    <span style="font-weight: ${bolds.Delhi};">Delhi</span> | 
-                    <span style="font-weight: ${bolds.Chennai};">Chennai</span>
+                <img src="${githubBaseUrl}school-logo.png?raw=true" alt="School Logo" style="max-width: 60px; width: 100%; margin-top: 10px; display: block; margin: 0px auto;">
+                <div style="font-size: 5px; color: #0d56a2; text-align: center; margin-top: 3px;">
+                    <span style="font-weight: normal;">Noida</span> |
+                    <span style="font-weight: normal;">Gurgaon</span> |
+                    <span style="font-weight: normal;">Faridabad</span> |
+                    <span style="font-weight: normal;">Delhi</span> |
+                    <span style="font-weight: normal;">Chennai</span>
                 </div>
             </div>
             <div style="width: 1.5px; background-color: #a6a6a6; height: 130px; margin: 0 10px;"></div>
-            <div style="display: flex; flex-direction: column; text-align: center;">
-                <div style="display: flex; align-items: center; justify-content: center;">
-                    <span style="font-weight: bold; color: #a6a6a6; font-size: 14px; margin-right: 5px;">${name}</span>
+            <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: bold; color: #a6a6a6; font-size: 14px;">${name}</span>
                     ${linkedinHtml}
                 </div>
                 <span style="color: #a6a6a6; font-size: 12px; margin-top: 0px;">${designation}</span>
@@ -80,19 +67,18 @@ function generateSignature() {
                 </div>
             </div>
         </div>
-        `;
-        document.getElementById('signature-result').innerHTML = signatureHtml;
-    };
+    `;
+    document.getElementById('signature-result').innerHTML = signatureHtml;
 }
 
 function copyToClipboard() {
     const signatureResult = document.getElementById('signature-result');
     const range = document.createRange();
     range.selectNode(signatureResult);
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
     document.execCommand('copy');
-    window.getSelection().removeAllRanges(); // to deselect
+    window.getSelection().removeAllRanges();
     alert('Signature copied to clipboard. You can now paste it into your Gmail signature settings.');
 }
 
