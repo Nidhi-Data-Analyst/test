@@ -16,41 +16,71 @@ function generateSignature() {
     reader.readAsDataURL(profilePic);
     reader.onloadend = function () {
         const profilePicUrl = reader.result;
+        const githubBaseUrl = 'https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/';
+
+        const bolds = {
+            "Noida": "normal",
+            "Gurgaon": "normal",
+            "Faridabad": "normal",
+            "Delhi": "normal",
+            "Chennai": "normal",
+        };
+        bolds[campus] = "bold";
+
+        let linkedinHtml = '';
+        if (linkedin) {
+            linkedinHtml = `
+            <div class="vertical-line-small"></div>
+            <a href="${linkedin}" target="_blank">
+                <img src="${githubBaseUrl}linkedin-icon.png?raw=true" alt="LinkedIn" class="linkedin-logo">
+            </a>
+            `;
+        }
+
         const signatureHtml = `
-        <div style="font-family: Arial, sans-serif; color: #333;">
-            <table>
-                <tr>
-                    <td style="padding: 10px;">
-                        <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; width: 70px;">
-                    </td>
-                    <td style="padding: 10px;">
-                        <strong style="font-size: 14px;">${name}</strong><br>
-                        <span style="font-size: 12px;">${designation}</span><br>
-                        <a href="${linkedin}" style="font-size: 12px; color: #007bff;">LinkedIn</a><br>
-                        <img src="phone-icon-url" alt="Phone Icon" style="width: 12px;"> <span style="font-size: 12px;">${phone}</span><br>
-                        <img src="email-icon-url" alt="Email Icon" style="width: 12px;"> <a href="mailto:${email}" style="font-size: 12px; color: #333;">${email}</a><br>
-                        <img src="website-icon-url" alt="Website Icon" style="width: 12px;"> <a href="https://shivnadarschool.edu.in/" style="font-size: 12px; color: #333;">https://shivnadarschool.edu.in/</a><br>
-                        <div style="margin-top: 10px;">
-                            <a href="facebook-url"><img src="facebook-icon-url" alt="Facebook" style="width: 12px;"></a>
-                            <a href="instagram-url"><img src="instagram-icon-url" alt="Instagram" style="width: 12px;"></a>
-                            <a href="youtube-url"><img src="youtube-icon-url" alt="YouTube" style="width: 12px;"></a>
-                            <a href="linkedin-url"><img src="linkedin-icon-url" alt="LinkedIn" style="width: 12px;"></a>
-                            <a href="twitter-url"><img src="twitter-icon-url" alt="Twitter" style="width: 12px;"></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="padding: 10px;">
-                        <img src="school-logo-url" alt="School Logo" style="width: 100px;">
-                        <div style="font-size: 10px; color: #999;">
-                            Noida | Gurgaon | Faridabad | Delhi | Chennai | Core Office
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        <div class="signature-container" style="width: fit-content;">
+            <div class="left-column">
+                <img src="${profilePicUrl}" alt="Profile Picture" class="profile-pic">
+                <img src="${githubBaseUrl}school-logo.png?raw=true" alt="School Logo" class="school-logo">
+                <div class="school-locations">
+                    <span style="font-weight: ${bolds.Noida};">Noida</span> | 
+                    <span style="font-weight: ${bolds.Gurgaon};">Gurgaon</span> | 
+                    <span style="font-weight: ${bolds.Faridabad};">Faridabad</span> | 
+                    <span style="font-weight: ${bolds.Delhi};">Delhi</span> | 
+                    <span style="font-weight: ${bolds.Chennai};">Chennai</span>
+                </div>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="signature-details">
+                <div class="name-linkedin">
+                    <span class="name">${name}</span>
+                    ${linkedinHtml}
+                </div>
+                <span class="designation">${designation}</span>
+                <div class="contact-info">
+                    <div>
+                        <img src="${githubBaseUrl}phone-icon.png?raw=true" alt="Phone Icon"> 
+                        <a href="tel:${phone}">${phone}</a>
+                    </div>
+                    <div>
+                        <img src="${githubBaseUrl}email-icon.png?raw=true" alt="Email Icon"> 
+                        <a href="mailto:${email}">${email}</a>
+                    </div>
+                    <div>
+                        <img src="${githubBaseUrl}website-icon.png?raw=true" alt="Web Icon"> 
+                        <a href="https://shivnadarschool.edu.in/">https://shivnadarschool.edu.in/</a>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/shivnadarschool"><img src="${githubBaseUrl}facebook-icon.png?raw=true" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/shivnadarschool"><img src="${githubBaseUrl}instagram-icon.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/shivnadarschool"><img src="${githubBaseUrl}youtube-icon.png?raw=true" alt="YouTube"></a>
+                    <a href="https://www.linkedin.com/school/shiv-nadar-school/"><img src="${githubBaseUrl}linkedin-icon.png?raw=true" alt="LinkedIn"></a>
+                    <a href="https://www.twitter.com/shivnadarschool"><img src="${githubBaseUrl}twitter-icon.png?raw=true" alt="Twitter"></a>
+                </div>
+            </div>
         </div>
         `;
-
         document.getElementById('signature-result').innerHTML = signatureHtml;
     };
 }
