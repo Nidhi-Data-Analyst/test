@@ -9,29 +9,33 @@
             font-family: Poppins, Arial, sans-serif;
             line-height: 1.5;
             color: #a6a6a6;
-            display: block;
+            display: flex;
             align-items: flex-start;
             border: 1px solid #e0e0e0;
-            padding: 2px;
+            padding: 10px;
             border-radius: 5px;
-            margin-left: 5px;
-            width: 100px;
+            width: fit-content;
+            max-width: 500px;
+            margin: 0 auto;
         }
         .left-column {
-            display: block;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-right: 0px;
         }
         .profile-pic {
             border-radius: 50%;
             width: 70px;
         }
         .school-logo {
-            width: 60px;
+            max-width: 60px;
+            width: 100%;
             margin-top: 10px;
+            display: block;
+            margin: 0 auto;
         }
         .school-locations {
-            font-size: 5px;
+            font-size: 10px;
             color: #0d56a2;
             text-align: center;
             margin-top: 3px;
@@ -43,19 +47,20 @@
             margin: 0 10px;
         }
         .signature-details {
-            display: block;
+            display: flex;
             flex-direction: column;
+            text-align: center;
         }
         .name-linkedin {
-            display: block;
+            display: flex;
             align-items: center;
+            justify-content: center;
         }
         .name-linkedin .name {
             font-weight: bold;
             color: #a6a6a6;
             font-size: 14px;
             margin-right: 5px;
-            margin-Bottom: 1px;
         }
         .name-linkedin .vertical-line-small {
             height: 15px;
@@ -74,12 +79,12 @@
         }
         .contact-info {
             margin-top: 10px;
-            display: block;
+            display: flex;
             flex-direction: column;
             font-size: 10px;
         }
         .contact-info div {
-            display: block;
+            display: flex;
             align-items: center;
             margin-bottom: 2px;
         }
@@ -96,7 +101,8 @@
         }
         .social-icons {
             margin-top: 3px;
-            display: block;
+            display: flex;
+            justify-content: center;
         }
         .social-icons a {
             margin-right: 10px;
@@ -133,7 +139,6 @@
     <input type="file" id="profilePic" accept="image/*"><br>
     <label for="campus">Campus:</label>
     <select id="campus">
-        <option value="Core Office">Core Office</option>
         <option value="Noida">Noida</option>
         <option value="Gurgaon">Gurgaon</option>
         <option value="Faridabad">Faridabad</option>
@@ -144,6 +149,6 @@
     <div id="signature-result"></div>
     <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
     <button class="copy-button" onclick="copyToSignatureRescue()">Copy HTML to Signature Rescue</button>
-    <script src="script.js"></script>
+    <script src="scriptes.js"></script>
 </body>
 </html>
