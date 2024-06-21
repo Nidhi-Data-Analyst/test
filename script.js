@@ -1,101 +1,78 @@
 function generateSignature() {
-    var name = document.getElementById("name").value;
-    var designation = document.getElementById("designation").value;
-    var phone = document.getElementById("phone").value;
-    var email = document.getElementById("email").value;
-    var linkedin = document.getElementById("linkedin").value;
-    var campus = document.getElementById("campus").value;
-    var profilePic = document.getElementById("profilePic").files[0];
-    var reader = new FileReader();
+    const name = document.getElementById('name').value;
+    const designation = document.getElementById('designation').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const linkedin = document.getElementById('linkedin').value;
+    const profilePic = document.getElementById('profilePic').files[0];
+    const campus = document.getElementById('campus').value;
 
+    if (!name || !designation || !phone || !email || !profilePic || !campus) {
+        alert('Please fill in all mandatory fields.');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.readAsDataURL(profilePic);
     reader.onloadend = function () {
-        var profilePicSrc = reader.result;
-
-        var signatureHTML = `
-        <div style="font-family: Arial, sans-serif; line-height: 1.4;">
-            <table style="width: 100%; max-width: 500px;">
+        const profilePicUrl = reader.result;
+        const signatureHtml = `
+        <div style="font-family: Arial, sans-serif; color: #333;">
+            <table>
                 <tr>
                     <td style="padding: 10px;">
-                        <img src="${profilePicSrc}" alt="Profile Picture" style="width: 80px; height: 80px; border-radius: 50%;">
+                        <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; width: 70px;">
                     </td>
                     <td style="padding: 10px;">
-                        <p style="margin: 0; font-size: 18px; font-weight: bold;">${name}</p>
-                        <p style="margin: 0; font-size: 14px; color: #666;">${designation}</p>
-                        <p style="margin: 0; font-size: 14px;">
-                            <a href="${linkedin}" style="color: #007bff; text-decoration: none;">LinkedIn</a>
-                        </p>
+                        <strong style="font-size: 14px;">${name}</strong><br>
+                        <span style="font-size: 12px;">${designation}</span><br>
+                        <a href="${linkedin}" style="font-size: 12px; color: #007bff;">LinkedIn</a><br>
+                        <img src="phone-icon-url" alt="Phone Icon" style="width: 12px;"> <span style="font-size: 12px;">${phone}</span><br>
+                        <img src="email-icon-url" alt="Email Icon" style="width: 12px;"> <a href="mailto:${email}" style="font-size: 12px; color: #333;">${email}</a><br>
+                        <img src="website-icon-url" alt="Website Icon" style="width: 12px;"> <a href="https://shivnadarschool.edu.in/" style="font-size: 12px; color: #333;">https://shivnadarschool.edu.in/</a><br>
+                        <div style="margin-top: 10px;">
+                            <a href="facebook-url"><img src="facebook-icon-url" alt="Facebook" style="width: 12px;"></a>
+                            <a href="instagram-url"><img src="instagram-icon-url" alt="Instagram" style="width: 12px;"></a>
+                            <a href="youtube-url"><img src="youtube-icon-url" alt="YouTube" style="width: 12px;"></a>
+                            <a href="linkedin-url"><img src="linkedin-icon-url" alt="LinkedIn" style="width: 12px;"></a>
+                            <a href="twitter-url"><img src="twitter-icon-url" alt="Twitter" style="width: 12px;"></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;" colspan="2">
-                        <img src="https://shivadarschool.edu.in/logo.png" alt="Shiv Nadar School" style="width: 100px;">
-                        <p style="margin: 0; font-size: 14px; color: #666;">${campus}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;" colspan="2">
-                        <p style="margin: 0; font-size: 14px; color: #666;">
-                            <img src="https://example.com/phone-icon.png" alt="Phone" style="width: 14px; vertical-align: middle;"> ${phone}
-                        </p>
-                        <p style="margin: 0; font-size: 14px; color: #666;">
-                            <img src="https://example.com/email-icon.png" alt="Email" style="width: 14px; vertical-align: middle;"> ${email}
-                        </p>
-                        <p style="margin: 0; font-size: 14px; color: #666;">
-                            <img src="https://example.com/web-icon.png" alt="Website" style="width: 14px; vertical-align: middle;">
-                            <a href="https://shivadarschool.edu.in" style="color: #007bff; text-decoration: none;">https://shivadarschool.edu.in</a>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;" colspan="2">
-                        <p style="margin: 0;">
-                            <a href="https://facebook.com/shivnadar" style="margin-right: 5px;">
-                                <img src="https://example.com/facebook-icon.png" alt="Facebook" style="width: 24px;">
-                            </a>
-                            <a href="https://instagram.com/shivnadar" style="margin-right: 5px;">
-                                <img src="https://example.com/instagram-icon.png" alt="Instagram" style="width: 24px;">
-                            </a>
-                            <a href="https://linkedin.com/shivnadar" style="margin-right: 5px;">
-                                <img src="https://example.com/linkedin-icon.png" alt="LinkedIn" style="width: 24px;">
-                            </a>
-                            <a href="https://youtube.com/shivnadar">
-                                <img src="https://example.com/youtube-icon.png" alt="YouTube" style="width: 24px;">
-                            </a>
-                        </p>
+                    <td colspan="2" style="padding: 10px;">
+                        <img src="school-logo-url" alt="School Logo" style="width: 100px;">
+                        <div style="font-size: 10px; color: #999;">
+                            Noida | Gurgaon | Faridabad | Delhi | Chennai | Core Office
+                        </div>
                     </td>
                 </tr>
             </table>
         </div>
         `;
 
-        document.getElementById("signature-preview").innerHTML = signatureHTML;
+        document.getElementById('signature-result').innerHTML = signatureHtml;
     };
-
-    if (profilePic) {
-        reader.readAsDataURL(profilePic);
-    } else {
-        reader.onloadend();
-    }
 }
 
 function copyToClipboard() {
-    var signatureHTML = document.getElementById("signature-preview").innerHTML;
-    var tempInput = document.createElement("textarea");
-    tempInput.value = signatureHTML;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    alert("Signature copied to clipboard!");
+    const signatureResult = document.getElementById('signature-result');
+    const range = document.createRange();
+    range.selectNode(signatureResult);
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges(); // to deselect
+    alert('Signature copied to clipboard. You can now paste it into your Gmail signature settings.');
 }
 
 function copyToSignatureRescue() {
-    var signatureHTML = document.getElementById("signature-preview").innerHTML;
-    var tempInput = document.createElement("textarea");
-    tempInput.value = signatureHTML;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    alert("Signature copied to clipboard! Now paste it into Signature Rescue.");
+    const signatureHtml = document.getElementById('signature-result').innerHTML;
+    const tempTextarea = document.createElement('textarea');
+    tempTextarea.value = signatureHtml;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempTextarea);
+    alert('HTML copied to clipboard for Signature Rescue.');
 }
