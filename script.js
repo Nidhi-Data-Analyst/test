@@ -40,7 +40,7 @@ function generateSignature() {
         <div class="signature-container" style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; border: 1px solid #e0e0e0; padding: 5px; border-radius: 5px; width: 100%; max-width: 340px;">
             <table>
                 <tr>
-                    <td style="vertical-align: top; padding-right: 10px;">
+                    <td style="vertical-align: top; padding-right: 10px; text-align: center;">
                         <img src="${profilePicUrl}" alt="Profile Picture" class="profile-pic" style="border-radius: 50%; max-width:70px; width:100%;">
                         <img src="${githubBaseUrl}school-logo.png?raw=true" alt="School Logo" class="school-logo"style="width:100%; max-width:70px; display: block; margin-top: 3px; margin: 0 auto;">
                         <div class="school-locations" style="font-size: 5px; color: #0d56a2; text-align: center; margin-top: 5px; clear: both;">
