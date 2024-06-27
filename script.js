@@ -1,22 +1,25 @@
 function generateSignature() {
-    const name = document.getElementById('name').value;
-    const designation = document.getElementById('designation').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const linkedin = document.getElementById('linkedin').value;
-    const profilePic = document.getElementById('profilePic').files[0];
-    const campus = document.getElementById('campus').value;
+    const name = document.getElementById('name').value.trim();
+    const designation = document.getElementById('designation').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const linkedin = document.getElementById('linkedin').value.trim();
+    const profilePicUrlInput = document.getElementById('profilePicUrl').value.trim();
+    const campus = document.getElementById('campus').value.trim();
 
-    if (!name || !designation || !phone || !email || !profilePic || !campus) {
+    if (!name || !designation || !phone || !email || !profilePicUrlInput || !campus) {
         alert('Please fill in all mandatory fields.');
         return;
     }
 
-    const reader = new FileReader();
-    reader.readAsDataURL(profilePic);
-    reader.onloadend = function () {
-        const profilePicUrl = reader.result;
-        const githubBaseUrl = 'https://github.com/Nidhi-Data-Analyst/Email-Signature/blob/main/';
+    const fileIdMatch = profilePicUrlInput.match(/[-\w]{25,}/);
+    if (!fileIdMatch) {
+        alert('Invalid Google Drive URL for profile picture.');
+        return;
+    }
+    const profilePicUrl = `https://drive.google.com/uc?export=view&id=${fileIdMatch[0]}`;
+
+    const githubBaseUrl = 'https://github.com/Nidhi-Data-Analyst/Test1/blob/main/';
 
         const bolds = {
             "Noida": "normal",
