@@ -27,12 +27,14 @@ function generateSignature() {
         };
         bolds[campus] = "bold";
 
-        let linkedinHtml = '';
-        if (linkedin) {
-            linkedinHtml = `
-            <a href="${linkedin}" target="_blank">
-                <img src="${githubBaseUrl}linkedin-icon.png?raw=true" alt="LinkedIn" style="width: 15px; height: 15px; margin-left: 5px;">
-            </a>
+
+    let linkedinHtml = '';
+    if (linkedin) {
+        linkedinHtml = `
+        <div class="vertical-line-small" style="display: inline-block; width: 1px; background-color: #a6a6a6; height: 15px; margin: 0 5px;"></div>
+        <a href="${linkedin}" target="_blank">
+            <img src="${githubBaseUrl}linkedin-icon.png?raw=true" alt="LinkedIn" style="width: 15px; height: 15px;">
+        </a>
             `;
         }
 
