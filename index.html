@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature Generator</title>
+    <style>
+  .signature-container {
+            font-family: Poppins, Arial, sans-serif;
+            line-height: 1.5;
+            color: #a6a6a6;
+            border: 1px solid #e0e0e0;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 340px;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            max-width: 70px;
+            width: 100%;
+            display: block;
+            margin: 0 auto; 
+        }
+        .school-logo {
+            margin-top: 3px; /* 3px gap between profile picture and school logo */
+            max-width: 70px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;   
+        }
+        .school-locations {
+            font-size: 5px;
+            color: #0d56a2;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .name-linkedin {
+            font-weight: bold;
+            color: #a6a6a6;
+            font-size: 14px;
+            margin-bottom: 1px;
+        }
+        .designation {
+            color: #a6a6a6;
+            font-size: 12px;
+            margin-top: 0px;
+        }
+        .contact-info {
+            margin-top: 10px;
+            font-size: 10px;
+        }
+        .contact-info div {
+            margin-bottom: 2px;
+        }
+        .contact-info img {
+            width: 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .contact-info a {
+            color: #a6a6a6;
+            text-decoration: none;
+        }
+        .social-icons a {
+            margin-right: 10px;
+        }
+        .social-icons img {
+            width: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Signature Generator</h1>
+    <form id="signature-form" onsubmit="event.preventDefault(); generateSignature();">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name" required><br>
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" placeholder="Designation" required><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" placeholder="Phone" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <label for="linkedin">LinkedIn URL:</label>
+        <input type="url" id="linkedin" placeholder="LinkedIn URL"><br>
+        <label for="profilePicUrl">Profile Pic URL:</label>
+        <input type="text" id="profilePicUrl" placeholder="Profile Pic URL" required><br>
+        <label for="campus">Campus:</label>
+        <select id="campus" required>
+            <option value="Core Office">Core Office</option>
+            <option value="Noida">Noida</option>
+            <option value="Gurgaon">Gurgaon</option>
+            <option value="Faridabad">Faridabad</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+        </select>
+        <br>
+        <button type="button" id="generate-button">Generate Signature</button>
+        <button type="button" id="copy-button">Copy to Clipboard</button>
+        <button type="button" id="copy-html-button">Copy HTML to Signature Rescue</button>
+    </form>
+    <div id="signature-result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
