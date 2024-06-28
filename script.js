@@ -1,4 +1,8 @@
+console.log("JavaScript loaded successfully.");
+
 function generateSignature() {
+    console.log("Generating signature...");
+    
     const name = document.getElementById('name').value.trim();
     const designation = document.getElementById('designation').value.trim();
     const phone = document.getElementById('phone').value.trim();
@@ -112,6 +116,7 @@ function generateSignature() {
     </div>
     `;
 
+    console.log("Generated signature HTML:", signatureHtml);
     document.getElementById('signature-result').innerHTML = signatureHtml;
 }
 
