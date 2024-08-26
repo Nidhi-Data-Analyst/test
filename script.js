@@ -77,10 +77,10 @@ const signatureHtml = `
                     <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:90px; width:100%; text-align:center;">
                     <br>
                     <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; margin: 3px auto 0;">
-                    <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 3px;">
+                    <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 1px;">
                         <span style="font-size: 25px;">S</span><span style="font-size: 20px;">HIV NADAR SCHOOL</span>
                     </div>
-                    <div style="font-family: 'Bodoni MT', serif; color: black; text-align: center; font-size: 10px; margin-top: 3px;">
+                    <div style="font-family: 'Bodoni MT', serif; color: black; text-align: center; font-size: 10px; margin-top: 1px;">
                         Education for Life
                     </div>
                     <div class="school-locations" style="font-size: 8px; color: #0d56a2; text-align: center; margin-top: 3px;">
