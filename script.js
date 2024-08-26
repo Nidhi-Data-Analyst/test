@@ -85,7 +85,7 @@ const signatureHtml = `
                     <div style="font-family: 'Bodoni MT', serif; color: black; text-align: center; font-size: 10px; margin-top: 0px; line-height: 1;">
                         Education for Life
                     </div>
-                    <div class="school-locations" style="font-size: 8px; color: #0d56a2; text-align: center; margin-top: 3px;">
+                    <div class="school-locations" style="font-size: 8px; color: black; text-align: center; margin-top: 3px;">
                         <span style="font-weight: ${bolds.Noida};">Noida</span> | 
                         <span style="font-weight: ${bolds.Gurgaon};">Gurgaon</span> | 
                         <span style="font-weight: ${bolds.Faridabad};">Faridabad</span> | 
@@ -115,7 +115,7 @@ const signatureHtml = `
                             <a href="https://shivnadarschool.edu.in/" style="color: #a6a6a6; text-decoration: none;">https://shivnadarschool.edu.in/</a>
                         </div>
                     </div>
-                    <div style="margin-top: 3px;">
+                    <div style="margin-top: 3px; margin-left: 10px">
                         <a href="https://www.facebook.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}facebook14.png?raw=true" alt="Facebook" ></a>
                         <a href="https://www.instagram.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}instagram14.png?raw=true" alt="Instagram" ></a>
                         <a href="https://www.youtube.com/@shivnadarschools" style="margin-right: 5px;"><img src="${githubBaseUrl}Youtube14.png?raw=true" alt="YouTube" ></a>
