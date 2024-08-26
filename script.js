@@ -76,7 +76,7 @@ const signatureHtml = `
                 <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 175px">
                     <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:90px; width:100%; text-align:center;">
                     <br>
-                    <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; margin: 0px auto 0; margin-bottom: -10px;">
+                    <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; text-align:center; margin: 0px auto 0; margin-bottom: -10px;">
                     <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: -10px;">
                         <span style="font-size: 25px;">S</span><span style="font-size: 20px;">HIV</span>
                         <span style="font-size: 25px;">N</span><span style="font-size: 20px;">ADAR</span>
