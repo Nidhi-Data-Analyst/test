@@ -115,7 +115,7 @@ const signatureHtml = `
                             <a href="https://shivnadarschool.edu.in/" style="color: #a6a6a6; text-decoration: none;">https://shivnadarschool.edu.in/</a>
                         </div>
                     </div>
-                    <div style="margin-top: 3px; margin-left: 10px">
+                    <div style="margin-top: 3px; margin-left: 18px">
                         <a href="https://www.facebook.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}facebook14.png?raw=true" alt="Facebook" ></a>
                         <a href="https://www.instagram.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}instagram14.png?raw=true" alt="Instagram" ></a>
                         <a href="https://www.youtube.com/@shivnadarschools" style="margin-right: 5px;"><img src="${githubBaseUrl}Youtube14.png?raw=true" alt="YouTube" ></a>
