@@ -74,7 +74,7 @@ function generateSignature() {
             <table cellpadding="0" cellspacing="0" border="0" style="width: 370px; table-layout: fixed; border-collapse: collapse;">
                 <tr>
                     <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 125px;">
-                        <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width: 80px; width: 100%; display: block;">
+                        <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width: 80px; width: 100%; text-align:center;">
                         <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width: 100%; max-width: 150px; display: block; margin: 5px auto 0;">
                         <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; line-height: 1.2; white-space: nowrap;">
                             <span style="font-size: 20px;">S</span><span style="font-size: 15px;">HIV</span>
@@ -93,7 +93,7 @@ function generateSignature() {
                         </div>
                     </td>
                     <td style="border-left: 1.5px solid #a6a6a6; padding-left: 5px; width: 245px;">
-                        <table cellpadding="0" cellspacing="0" border="0" style="font-size: 14px; color: #a6a6a6; border-collapse: collapse; width: 100%;">
+                        <table cellpadding="0" cellspacing="0" border="0" style="font-size: 14px; color: #a6a6a6; border-collapse: collapse;">
                             <tr>
                                 <td style="font-weight: bold; vertical-align: top; padding: 0;">${name}</td>
                                 <td style="padding-left: 5px; vertical-align: top; padding: 0;">${linkedinHtml}</td>
