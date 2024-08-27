@@ -70,22 +70,22 @@ function generateSignature() {
     }
 
 const signatureHtml = `
-    <div style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; padding: 0px; border-radius: 5px; width: 340px; max-width: 395px; border: none;">
+    <div style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; padding: 0px; border-radius: 5px; width: 360px; max-width: 360px; border: none;">
         <table cellpadding="0" cellspacing="0" border="0" style="width: 340px; table-layout: fixed;">
             <tr>
-                <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 175px">
+                <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 120px">
                     <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:90px; width:100%; text-align:center;">
                     <br>
                     <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; margin: 0px auto 0;">
                     <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 0px; line-height: 1.2;">
-                        <span style="font-size: 22px;">S</span><span style="font-size: 17px;">HIV</span>
-                        <span style="font-size: 22px;">N</span><span style="font-size: 17px;">ADAR</span>
-                        <span style="font-size: 22px;">S</span><span style="font-size: 17px;">CHOOL</span>
+                        <span style="font-size: 20px;">S</span><span style="font-size: 15px;">HIV</span>
+                        <span style="font-size: 20px;">N</span><span style="font-size: 15px;">ADAR</span>
+                        <span style="font-size: 20px;">S</span><span style="font-size: 15px;">CHOOL</span>
                     </div>
                     <div style="font-family: 'Bodoni MT', serif; color: black; text-align: center; font-size: 10px; margin-top: 0px; line-height: 1;">
                         Education for Life
                     </div>
-                    <div class="school-locations" style="font-size: 8px; color: black; text-align: center; margin-top: 3px;">
+                    <div class="school-locations" style="font-size: 7px; color: black; text-align: center; margin-top: 3px;">
                         <span style="font-weight: ${bolds.Noida};">Noida</span> | 
                         <span style="font-weight: ${bolds.Gurgaon};">Gurgaon</span> | 
                         <span style="font-weight: ${bolds.Faridabad};">Faridabad</span> | 
@@ -93,7 +93,7 @@ const signatureHtml = `
                         <span style="font-weight: ${bolds.Chennai};">Chennai</span>
                     </div>
                 </td>
-                <td style="border-left: 1.5px solid #a6a6a6; padding-left: 5px; width: 220px">
+                <td style="border-left: 1.5px solid #a6a6a6; padding-left: 5px; width: 240px">
                     <table cellpadding="0" cellspacing="0" border="0" style="font-size: 14px; color: #a6a6a6; border-collapse: collapse;">
                         <tr>
                             <td style="font-weight: bold; vertical-align: top; padding: 0;">${name}</td>
