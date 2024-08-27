@@ -70,11 +70,11 @@ function generateSignature() {
     }
 
 const signatureHtml = `
-    <div style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; padding: 0px; border-radius: 5px; width: 360px; max-width: 360px; border: none;">
-        <table cellpadding="0" cellspacing="0" border="0" style="width: 360px; table-layout: fixed;">
+    <div style="font-family: Poppins, Arial, sans-serif; line-height: 1.5; color: #a6a6a6; padding: 0px; border-radius: 5px; width: 370px; max-width: 370px; border: none;">
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 370px; table-layout: fixed;">
             <tr>
-                <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 120px">
-                    <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:90px; width:100%; text-align:center;">
+                <td style="vertical-align: top; padding-right: 3px; text-align: center; width: 125px">
+                    <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:80px; width:100%; text-align:center;">
                     <br>
                     <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; margin: 0px auto 0;">
                     <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 0px; line-height: 1.2;">
@@ -93,7 +93,7 @@ const signatureHtml = `
                         <span style="font-weight: ${bolds.Chennai};">Chennai</span>
                     </div>
                 </td>
-                <td style="border-left: 1.5px solid #a6a6a6; padding-left: 5px; width: 240px">
+                <td style="border-left: 1.5px solid #a6a6a6; padding-left: 5px; width: 245px">
                     <table cellpadding="0" cellspacing="0" border="0" style="font-size: 14px; color: #a6a6a6; border-collapse: collapse;">
                         <tr>
                             <td style="font-weight: bold; vertical-align: top; padding: 0;">${name}</td>
