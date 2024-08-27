@@ -110,12 +110,12 @@ const signatureHtml = `
                             <img src="${githubBaseUrl}email14.png?raw=true" alt="Email Icon" style=" vertical-align: middle; margin-right: 5px;"> 
                             <a href="mailto:${email}" style="color: #a6a6a6; text-decoration: none;">${email}</a>
                         </div>
-                        <div style="margin-bottom: 2px;">
+                        <div style="margin-bottom: 2px; white-space: nowrap;">
                             <img src="${githubBaseUrl}web14.png?raw=true" alt="Web Icon" style=" vertical-align: middle; margin-right: 5px;"> 
                             <a href="https://shivnadarschool.edu.in/" style="color: #a6a6a6; text-decoration: none;">https://shivnadarschool.edu.in/</a>
                         </div>
                     </div>
-                    <div style="margin-top: 3px; margin-left: 25px">
+                    <div style="margin-top: 3px; margin-left: 25px", white-space: nowrap;>
                         <a href="https://www.facebook.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}facebook14.png?raw=true" alt="Facebook" ></a>
                         <a href="https://www.instagram.com/shivnadarschool" style="margin-right: 5px;"><img src="${githubBaseUrl}instagram14.png?raw=true" alt="Instagram" ></a>
                         <a href="https://www.youtube.com/@shivnadarschools" style="margin-right: 5px;"><img src="${githubBaseUrl}Youtube14.png?raw=true" alt="YouTube" ></a>
