@@ -77,7 +77,7 @@ const signatureHtml = `
                     <img src="${profilePicUrl}" alt="Profile Picture" style="border-radius: 50%; max-width:80px; width:100%; text-align:center;">
                     <br>
                     <img src="${githubBaseUrl}school_logo 150x75.png?raw=true" alt="School Logo" class="school-logo" style="width:100%; max-width:150px; display: block; margin: 0px auto 0;">
-                    <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 0px; line-height: 1.2;">
+                    <div style="font-family: 'Bodoni MT Condensed', serif; color: #0567A8; text-align: center; margin-top: 0px; line-height: 1.2; white-space: nowrap;">
                         <span style="font-size: 20px;">S</span><span style="font-size: 15px;">HIV</span>
                         <span style="font-size: 20px;">N</span><span style="font-size: 15px;">ADAR</span>
                         <span style="font-size: 20px;">S</span><span style="font-size: 15px;">CHOOL</span>
@@ -85,7 +85,7 @@ const signatureHtml = `
                     <div style="font-family: 'Bodoni MT', serif; color: black; text-align: center; font-size: 10px; margin-top: 0px; line-height: 1;">
                         Education for Life
                     </div>
-                    <div class="school-locations" style="font-size: 7px; color: black; text-align: center; margin-top: 3px;">
+                    <div class="school-locations" style="font-size: 6px; color: black; text-align: center; margin-top: 3px; white-space: nowrap;">
                         <span style="font-weight: ${bolds.Noida};">Noida</span> | 
                         <span style="font-weight: ${bolds.Gurgaon};">Gurgaon</span> | 
                         <span style="font-weight: ${bolds.Faridabad};">Faridabad</span> | 
